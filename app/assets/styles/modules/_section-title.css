@@ -17,7 +17,7 @@
         margin-right: auto;
         margin-bottom: .6rem;
         
-        @minxin atSmall{
+        @mixin atSmall{
             display: inline-block;
             margin-right: .5rem;
             margin-left: 0;
