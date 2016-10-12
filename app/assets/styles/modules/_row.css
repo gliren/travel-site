@@ -1,56 +1,56 @@
 .row{
-    
+
     @mixin clearfix;
-    
+
     &--t-padding{
         padding-top: 80px;
     }
- 
+
     &--gutters{
         margin-right: -65px;
     }
-    
+
     &--gutters-large{
         margin-right: -100px;
     }
-    
+
     &--gutters-large > div{
         padding-right: 100px;
     }
-    
+
     &--gutters-small{
         margin-right: -45px;
     }
-    
+
     &--gutters-small > div{
         padding-right: 45px;
     }
-    
+
     &--gutters > div {
         padding-right: 65px;
-       
+
     }
-    
+
     &__b-margin-less-medium{
         margin-bottom: 1rem;
     }
-    
-    @mixin atMedium{ 
-        
+
+    @mixin atMedium{
+
         &__b-margin-less-medium{
         margin-bottom: 0;
         }
-        
+
         &__medium-4{
             float: left;
-            width: 33.333%;  
+            width: 33.333%;
         }
-        
+
         &__medium-4--larger{
                 max-width: 37%;
-            
+
             }
-        
+
         &__medium-6{
             float: left;
             width: 50%;
@@ -58,32 +58,32 @@
 
         &__medium-8{
             float: left;
-            width: 66.66%;   
-           
+            width: 66.66%;
+
         }
-        
+
          &__medium-8--smaller{
                 max-width: 63%;
             }
-        
+
     }
-    
-    @mixin atLarge{ 
-        
+
+    @mixin atLarge{
+
         &__b-margin-less-large{
         margin-bottom: 0;
         }
-        
+
         &__large-4{
             float: left;
-            width: 33.333%;  
+            width: 33.333%;
         }
-        
+
         &__large-4--larger{
                 max-width: 37%;
-            
+
             }
-        
+
         &__large-6{
             float: left;
             width: 50%;
@@ -91,45 +91,45 @@
 
         &__large-8{
             float: left;
-            width: 66.66%;   
-           
+            width: 66.66%;
+
         }
-        
+
          &__large-8--smaller{
                 max-width: 63%;
             }
-        
+
     }
-    
+
     /* begin box same height */
     &--box-same-height{
         @mixin atMedium{
             display: flex;
         }
-        
+
         & > div {
         float: none;
         display: flex;
     }
-          
+
     }
-    
-    
-    
+
+
+
     &--box-same-height-at-large{
         @mixin atLarge{
             display: flex;
         }
-        
+
          & > div {
         float: none;
         display: flex;
     }
-    
-          
+
+
     }
-    
-   
-   
-    
+
+
+
+
 }
