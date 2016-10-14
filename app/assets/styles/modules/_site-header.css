@@ -3,7 +3,12 @@
   width: 100%;
   z-index: 3;
   padding: 10px 0;
+  transition: background .3s ease-out;
 
+  /* show background */
+  &--is-expanded{
+    background: rgba($mainBlue, .65);
+  }
   @mixin atMedium{
     background: rgba($mainBlue, .3);
   }
@@ -30,11 +35,46 @@
 
   &__menu-icon{
     width: 20px;
-    height: 20px;
-    background: #fff;
+    height: 19px;
     position: absolute;
     top:10px;
     right:10px;
+    z-index: 10;
+
+    &::before{
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 20px;
+      height: 3px;
+      background: #fff;
+      transform-origin: 0 0; /* left top corner as the origin */
+      transition: transform .3s ease-out;
+    }
+
+    &__middle{
+      position: absolute;
+      top: 8px;
+      left: 0;
+      width: 20px;
+      height: 3px;
+      background: #fff;
+      transition: all .3s ease-out;
+      transform-origin: 0 50%;
+    }
+
+    &::after{
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 20px;
+      height: 3px;
+      background: #fff;
+      transform-origin: 0 100%; /* left bottom corner as origin */
+      transition: transform .3s ease-out;
+    }
 
     @mixin  atMedium{
       display: none;
@@ -42,13 +82,48 @@
 
   }
 
+  &__menu-icon--close-x{
+    &::before{
+      transform: rotate(45deg) scaleX(1.25);
+    }
+
+    .site-header__menu-icon__middle{
+      opacity: 0;
+      transform: scaleX(0);
+    }
+
+
+    &::after{
+      transform: rotate(-45deg) scaleX(1.25) translateY(1px);
+
+    }
+
+
+  }
+
+
   &__menu-content{
-    display: none;
-     /* hide in small screen */
+     opacity: 0;
+     transform: scale(1.2);
+     transition: all .3s ease-out;
+     position: relative;
+     z-index: -10;
+     padding-top: 90px;
+     text-align: center;
+
 
     @mixin atMedium{
-      display: block;
-      /* show in >= medium screen */
+      opacity: 1;
+      z-index: 1;
+      padding-top: 0;
+      transform: scale(1);
+    }
+
+    /* show menu items */
+    &--is-visible{
+      opacity: 1;
+      z-index: 1;
+      transform: scale(1);
     }
   }
 

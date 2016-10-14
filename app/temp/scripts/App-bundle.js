@@ -78,22 +78,35 @@
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 	var MobileMenu = function () {
+	  // target html elements
 	  function MobileMenu() {
 	    _classCallCheck(this, MobileMenu);
 
-	    this.menuIcon = (0, _jquery2.default)(".site-header__menu_icon");
+	    this.siteHeader = (0, _jquery2.default)(".site-header");
+	    this.menuIcon = (0, _jquery2.default)(".site-header__menu-icon");
+	    this.menuContent = (0, _jquery2.default)(".site-header__menu-content");
 	    this.events();
 	  }
+
+	  // click the icon
+
 
 	  _createClass(MobileMenu, [{
 	    key: "events",
 	    value: function events() {
-	      this.menuIcon.click(this.toggleTheMenu);
+	      this.menuIcon.click(this.toggleTheMenu.bind(this));
 	    }
 	  }, {
 	    key: "toggleTheMenu",
 	    value: function toggleTheMenu() {
-	      console.log("Yayyyyyyyyyy!");
+	      this.menuContent.toggleClass("site-header__menu-content--is-visible");
+	      // show menu
+
+	      this.siteHeader.toggleClass("site-header--is-expanded");
+	      // show menu background
+
+	      this.menuIcon.toggleClass("site-header__menu-icon--close-x");
+	      // menu icon change to x
 	    }
 	  }]);
 

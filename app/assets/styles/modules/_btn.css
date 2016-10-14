@@ -19,7 +19,11 @@
     }
 
     &--right{
-      float: right;
+
+      @mixin atMedium{
+        float: right;
+      }
+
     }
 
 }
