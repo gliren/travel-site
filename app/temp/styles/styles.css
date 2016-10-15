@@ -560,19 +560,30 @@ p{
 }
 
 .wrapper{
-    
+
     overflow: hidden;
     padding-left: 18px;
     padding-right: 18px;
     max-width: 1236px;
     margin-left: auto;
     margin-right: auto;
-    
-    
+
+
 }
 
 .wrapper--medium{
   max-width: 976px;
+}
+
+.wrapper--narrow{
+  max-width: 352px;
+}
+
+@media(min-width:530px) {
+
+  .wrapper--narrow {
+    max-width: 470px;
+  }
 }
 
 .wrapper .wrapper{
@@ -888,6 +899,11 @@ p{
   color: #2f5572;
 }
 
+.section-title--less-margin{
+  margin-bottom: 1.3rem;
+  margin-top: 0;
+}
+
 .feature-item{
     position: relative;
     padding-bottom: 2.5rem;
@@ -980,7 +996,7 @@ p{
 /* Don't edit modules/_sprite directly, instead, do it in gulp/templates/sprite */
 
 .icon{
-      background-image: url('/assets/images/sprites/sprite-215df739.svg');
+      background-image: url('/assets/images/sprites/sprite-0f9283b3.svg');
     }
 
 .icon--clear-view-escapes{
@@ -992,25 +1008,31 @@ p{
 .icon--comment{
     width:64px;
     height:64px;
-    background-position: 62.311557788944725% 99.56481481481481%;
+    background-position: 99.70443349753694% 0;
+  }
+
+.icon--facebook{
+    width:21.23px;
+    height:42.01px;
+    background-position: 26.040607071652357% 45.795830448496034%;
   }
 
 .icon--fire{
     width:56px;
     height:64px;
-    background-position: 68.79227053140097% 0;
+    background-position: 0 99.56481481481481%;
   }
 
 .icon--globe{
     width:64px;
     height:64px;
-    background-position: 0 99.56481481481481%;
+    background-position: 27.586206896551722% 99.56481481481481%;
   }
 
 .icon--instagram{
     width:42.01px;
     height:42.01px;
-    background-position: 64.43730485542332% 49.234556504346486%;
+    background-position: 63.2917018534157% 49.234556504346486%;
   }
 
 .icon--mail{
@@ -1022,31 +1044,31 @@ p{
 .icon--rain{
     width:64px;
     height:64px;
-    background-position: 99.69849246231156% 0;
+    background-position: 99.70443349753694% 59.25925925925926%;
   }
 
 .icon--star{
     width:64px;
     height:64px;
-    background-position: 99.69849246231156% 59.25925925925926%;
+    background-position: 59.11330049261084% 99.56481481481481%;
   }
 
 .icon--twitter{
     width:51.78px;
     height:42.06px;
-    background-position: 93.93049900577597% 98.50700323226104%;
+    background-position: 94.04330452560171% 98.50700323226104%;
   }
 
 .icon--wifi{
     width:60px;
     height:64px;
-    background-position: 31.527093596059114% 99.56481481481481%;
+    background-position: 68.79227053140097% 0;
   }
 
 .icon--youtube{
     width:34.75px;
     height:42px;
-    background-position: 28.039430449069002% 45.792307692307695%;
+    background-position: 36.69752421959096% 45.792307692307695%;
   }
 
 .site-footer{
@@ -1301,4 +1323,82 @@ p{
   opacity: 1;
   -webkit-transform: scale(1) rotate3d(10,100,100, 360deg);
           transform: scale(1) rotate3d(10,100,100, 360deg);
+}
+
+.modal{
+  position: fixed;
+  background: rgba(255,255,255,.94);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 5;
+  opacity: 0;  /* fade in/out effect */
+  visibility: hidden;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  -webkit-transition: all .3s ease-out;
+  transition: all .3s ease-out;
+}
+
+.modal--is-visible{
+  opacity: 1;
+  visibility: visible;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+.modal__inner{
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.modal__description{
+  font-weight: 300;
+}
+
+.modal__close{
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 2rem;
+  -webkit-transform: scaleX(1.2);
+          transform: scaleX(1.2);
+  -webkit-transform-origin: 100% 0;
+          transform-origin: 100% 0;
+  color: #2f5572;
+  cursor: pointer;
+}
+
+.modal__close:hover{
+  color:#d59541;
+}
+
+.social-icons__icon{
+  background: #d59541;
+  display: inline-block;
+  margin: 0 5px 5px 5px;
+  width: 33%;
+  height: 72px;
+  position: relative;
+}
+
+@media(min-width:530px) {
+
+  .social-icons__icon {
+    width: 72px;
+    margin: 0 5px;
+  }
+}
+
+.social-icons__icon .icon{
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);/* move icon's center point 50% left and 50% top: to match the box's center */
 }

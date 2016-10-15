@@ -12,5 +12,5 @@
     height:{{height.outer}}px;
     background-position: {{position.relative.xy}};
   }
-
+  
 {{/shapes}}
