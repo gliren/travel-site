@@ -26,4 +26,9 @@
 
     }
 
+    &--change-color{
+      background: #fff;
+      color: $mainBlue;
+    }
+
 }
