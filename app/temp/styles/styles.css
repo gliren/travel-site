@@ -672,7 +672,7 @@ p{
 
 @media(min-width:1010px) {
 
-  .page-section--testimonials {
+  .page-section--testimonials.lazyloaded {
     background: url('/assets/images/testimonials-bg.jpg') top center no-repeat;
     background-size: cover;
   }
@@ -1313,16 +1313,16 @@ p{
 
 .reveal-item{
   opacity: 0;
-  -webkit-transform: scale(1.15) rotate3d(0,0,0, 0deg);
-          transform: scale(1.15) rotate3d(0,0,0, 0deg);
+  -webkit-transform: scale(1.15);
+          transform: scale(1.15);
   -webkit-transition: all 1.5s ease-out;
   transition: all 1.5s ease-out;
 }
 
 .reveal-item--is-visible{
   opacity: 1;
-  -webkit-transform: scale(1) rotate3d(10,100,100, 360deg);
-          transform: scale(1) rotate3d(10,100,100, 360deg);
+  -webkit-transform: scale(1);
+          transform: scale(1);
 }
 
 .modal{
