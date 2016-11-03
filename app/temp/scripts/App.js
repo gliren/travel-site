@@ -11236,14 +11236,14 @@
 	  _createClass(StickyHeader, [{
 	    key: 'refreshWaypoints',
 	    value: function refreshWaypoints() {
-	      this.lazyImages.load(function () {
+	      this.lazyImages.on("load", function () {
 	        Waypoint.refreshAll();
 	      });
 	    }
 	  }, {
 	    key: 'addSmoothScrolling',
 	    value: function addSmoothScrolling() {
-	      this.headerLinks.smoothScroll();
+	      this.headerLinks.smoothScroll({ speed: 500 });
 	    }
 	  }, {
 	    key: 'createHeaderWaypoint',

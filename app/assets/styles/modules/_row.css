@@ -102,7 +102,7 @@
     }
 
     /* begin box same height */
-    &--box-same-height{
+    .flexbox &--box-same-height{
         @mixin atMedium{
             display: flex;
         }
@@ -114,22 +114,16 @@
 
     }
 
-
-
-    &--box-same-height-at-large{
+    .flexbox &--box-same-height-at-large{
         @mixin atLarge{
             display: flex;
         }
 
-         & > div {
+        & > div {
         float: none;
         display: flex;
     }
 
-
     }
-
-
-
 
 }

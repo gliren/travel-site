@@ -4,6 +4,11 @@ var gulp = require('gulp'),
     del = require('del');
 
 var   config = {
+      shape:{
+        spacing:{
+          padding:1
+        }
+      },
       mode: {
         css:{
           sprite:'sprite.svg',
@@ -14,7 +19,7 @@ var   config = {
           }
         }
       }
-    }
+    };
 
 // delete the old combined svg
 gulp.task('beginClean', function(){
@@ -30,14 +35,17 @@ gulp.task('createSprite', ['beginClean'], function(){
 
 });
 
+
 //============transport files to each location============
 
 // c&p, and update the combined svg in images folder
 gulp.task('copySpriteGraphic',['createSprite'], function(){
 
-    return gulp.src('./app/temp/sprite/css/**/*.svg')
+    return gulp.src('./app/temp/sprite/css/**/*.{svg,png}')
     .pipe(gulp.dest('./app/assets/images/sprites'));
 });
+
+
 // c&p, and update the sprite.css in modules folder
 gulp.task('copySpriteCSS', ['createSprite'], function(){
 
