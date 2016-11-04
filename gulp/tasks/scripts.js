@@ -1,7 +1,7 @@
 var gulp = require('gulp'),
     webpack = require('webpack');
 
-gulp.task('runWebPack', function(callback){
+gulp.task('runWebPack', ['modernizr'], function(callback){
   webpack(require('../../webpack.config.js'), function(err, stats){
             // up to gulp/ up to root/to webpack.config
     if(err){

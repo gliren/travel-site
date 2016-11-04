@@ -1,9 +1,12 @@
 module.exports = {
-  entry: "./app/assets/scripts/App.js",
+  entry: {
+    App: "./app/assets/scripts/App.js",
+    Vendor: "./app/assets/scripts/Vendor.js"
           // original file path
+  },
   output: {
   path: "./app/temp/scripts",
-  filename: "App-bundle.js"
+  filename: "[name].js" // [name]-> the file name
   // copy it to another dest and name the new file
   },
   module:{

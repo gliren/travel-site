@@ -35,7 +35,7 @@
       transform: none;
 
       .site-header--dark & {
-        transform: scale(.65);
+        transform: scale(.64);
       }
     }
 
